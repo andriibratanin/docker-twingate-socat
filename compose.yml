@@ -1,0 +1,18 @@
+services:
+  twingate-service:
+    image: twingate-service:latest
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    environment:
+      - SERVICE_KEY # Twingate-generated Service Key as JSON line (will be taken from .env file)
+      - PORT_MAPPINGS # something like "80:sensors.raspberrypi.private:80;81:smarthome.raspberrypi.private:81" (will be taken from .env file)
+      - LOG_RESOURCES=1
+      # Debugging Twingate connectivity issues:
+      #- LOG_TWINGATE=1
+      #- LOG_TWINGATE_TRUNCATE=1 # requires LOG_TWINGATE
+    ports:
+      - 8080:80
+      - 8081:81
+    restart: unless-stopped
