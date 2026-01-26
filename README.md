@@ -21,7 +21,7 @@ services:
     
   prometheus-node-exporter:
     #...
-    network_mode: "service:twingate-client"
+    network_mode: "service:twingate-service"
     ports:
       - "9100:9100" # WARNING: Not supported when 'network_mode' is used!
 ```
