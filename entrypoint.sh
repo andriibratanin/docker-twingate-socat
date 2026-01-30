@@ -123,6 +123,8 @@ echo "$SERVICE_KEY" \
     | twingate setup --headless=- \
     | bash /log_transformer_twingate.sh >/proc/1/fd/1 &
 
+#twingate config log-level debug
+
 # Twingate operation
 log "INFO" "Starting Twingate"
 twingate_log=/var/log/twingated.log
