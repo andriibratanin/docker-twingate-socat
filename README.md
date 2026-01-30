@@ -99,6 +99,10 @@ Won't fix:
 - Though the projects aims to make logs of all its components look the same (see `log_transformer_*.sh` scripts), there are still some leftovers related to Twingate (some of its early log messages aren't well-formatted and thus left as is)
 - For some reason `--disable-colors` parameter doesn't work and "Twingate has been started" message appears green in logs
 
+### Possible future improvements
+
+- [Userspace Networking](https://www.twingate.com/docs/linux-userspace-networking) - allows to run without "TUN" device and root user.
+
 ### Project status
 
 ![Portfolio](https://img.shields.io/badge/Status-Portfolio-lightgrey?style=flat-square)
@@ -118,3 +122,8 @@ If you have ideas, feel free to open a discussion via "Issues".
 - Socat
 - Docker
 - Bash
+
+### Alternatives
+
+- [Twingate Linux Headless Client (Docker Image)](https://github.com/Twingate-Solutions/twingate-custom-client-container) - this image provides a lightweight, self-contained way to run the Twingate Linux Client in headless mode using a Service Key.
+- [Headless Client Gateway](https://github.com/Twingate-Solutions/general-scripts/tree/main/twingate-headless-client-gateway) - setup of a whole network Internet Gateway, utilizing the Twingate Headless Client.
